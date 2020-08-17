@@ -1,5 +1,7 @@
-const render = require("./render_README.js")
+const commandLineUsage = require('command-line-usage')
+const commandLineArgs = require('command-line-args')
 
+const render = require("./render_README.js")
 
 function main() {
 
@@ -24,6 +26,7 @@ function main() {
   if (options.help) {
     const usage = commandLineUsage(sections)
     console.log(usage)
+    return
   }
 
 
@@ -34,3 +37,5 @@ function main() {
     options["values"]
   )
 }
+
+main()

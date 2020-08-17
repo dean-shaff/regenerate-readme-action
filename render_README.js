@@ -1,8 +1,5 @@
 const fs = require("fs")
 
-const commandLineUsage = require('command-line-usage')
-const commandLineArgs = require('command-line-args')
-
 function format(str, keys, values) {
   for (var idx=0; idx<keys.length; idx++) {
     str = str.replace(`{${keys[idx]}}`, values[idx])

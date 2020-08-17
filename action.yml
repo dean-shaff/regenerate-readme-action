@@ -26,7 +26,7 @@ inputs:
   git-branch:
     description: "branch to which to commit"
     required: True
-    default: ${{ github.head_ref }}
+    default: ${{ github.ref }}
 runs:
   using: 'node12'
   main: 'index.js'

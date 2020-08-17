@@ -21,6 +21,7 @@ async function main () {
     console.log(`value=${value}`)
     console.log(`gitEmail=${gitEmail}`)
     console.log(`gitName=${gitName}`)
+    console.log(`gitBranch=${gitBranch}`)
 
     render.renderREADME(
       inputFileName,
@@ -35,9 +36,6 @@ async function main () {
     await exec(`git commit -m "Re-build ${outputFileName}"`)
     await exec(`git push origin ${gitBranch}`)
 
-    // Get the JSON webhook payload for the event that triggered the workflow
-    // const payload = JSON.stringify(github.context.payload, undefined, 2)
-    // console.log(`The event payload: ${payload}`);
   } catch (error) {
     core.setFailed(error.message);
   }

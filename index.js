@@ -12,7 +12,9 @@ async function main () {
     const value = core.getInput("value")
     const gitEmail = core.getInput("git-email")
     const gitName = core.getInput("git-name")
-    const gitBranch = core.getInput("git-branch")
+    const gitBranchPath = core.getInput("git-branch")
+    let gitBranchPathSplit = gitBranchPath.split("/")
+    const gitBranch = gitBranchPathSplit[gitBranchPathSplit.length - 1]
 
 
     console.log(`inputFileName=${inputFileName}`)
@@ -21,6 +23,7 @@ async function main () {
     console.log(`value=${value}`)
     console.log(`gitEmail=${gitEmail}`)
     console.log(`gitName=${gitName}`)
+    console.log(`gitBranchPath=${gitBranchPath}`)
     console.log(`gitBranch=${gitBranch}`)
 
     render.renderREADME(

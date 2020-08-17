@@ -18,11 +18,11 @@ inputs:
   git-email:
     description: "email for git configuration"
     required: True
-    default: ${{ secrets.GIT_EMAIL }}
+    default: ${{ git.email }}
   git-name:
     description: "name for git configuration"
     required: True
-    default: ${{ secrets.GIT_NAME }}
+    default: ${{ git.name }}
 runs:
   using: 'node12'
   main: 'index.js'

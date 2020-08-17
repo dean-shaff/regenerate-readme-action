@@ -12,6 +12,7 @@ async function main () {
     const value = core.getInput("value")
     const gitEmail = core.getInput("git-email")
     const gitName = core.getInput("git-name")
+    const gitBranch = core.getInput("git-branch")
 
 
     console.log(`inputFileName=${inputFileName}`)
@@ -28,13 +29,11 @@ async function main () {
       [value]
     )
 
-    // console.log(process.env.GIT_EMAIL, process.env.GIT_NAME)
-
-    await exec(`git config user.email ${gitEmail}`)
-    await exec(`git config user.name ${gitName}`)
+    await exec(`git config --global user.email ${gitEmail}`)
+    await exec(`git config --global user.name ${gitName}`)
     await exec(`git add ${outputFileName}`)
-    await exec(`git commit -m "Re-build ${outputFileName}" || echo "No changes to commit"`)
-    await exec(`git push origin master || echo "No changes to commit"`)
+    await exec(`git commit -m "Re-build ${outputFileName}"`)
+    await exec(`git push origin ${gitBranch}`)
 
     // Get the JSON webhook payload for the event that triggered the workflow
     // const payload = JSON.stringify(github.context.payload, undefined, 2)

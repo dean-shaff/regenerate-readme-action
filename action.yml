@@ -23,6 +23,10 @@ inputs:
     description: "name for git configuration"
     required: True
     default: ${{ github.actor }}
+  git-branch:
+    description: "branch to which to commit"
+    required: True
+    default: ${{ github.head_ref }}
 runs:
   using: 'node12'
   main: 'index.js'

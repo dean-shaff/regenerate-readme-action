@@ -1,0 +1,22 @@
+name: Test Action
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Regenerate README.md
+      uses: ./
+      with:
+        key: help
+        value: hello
+    # - name: commit rendered README.md
+    #   run: |
+    #     git config user.email ${{ secrets.GIT_EMAIL }}
+    #     git config user.name ${{ secrets.GIT_NAME }}
+    #     git add README.md
+    #     git commit -m "Re-build README.md" || echo "No changes to commit"
+    #     git push origin master || echo "No changes to commit"

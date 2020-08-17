@@ -9,7 +9,7 @@ try {
   const outputFileName = core.getInput("output-file-name")
   const key = core.getInput("key")
   const value = core.getInput("value")
-
+  
   console.log(`inputFileName=${inputFileName}`)
   console.log(`outputFileName=${outputFileName}`)
   console.log(`key=${key}`)
@@ -21,7 +21,6 @@ try {
     [key],
     [value]
   )
-  const nameToGreet = core.getInput("who-to-greet");
 
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)

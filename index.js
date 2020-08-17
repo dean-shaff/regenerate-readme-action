@@ -6,12 +6,23 @@ const render = require("./render_README.js")
 
 try {
   const inputFileName = core.getInput("input-file-name")
+  const outputFileName = core.getInput("output-file-name")
+  const key = core.getInput("key")
+  const value = core.getInput("value")
 
-  // `who-to-greet` input defined in action metadata file
+  console.log(`inputFileName=${inputFileName}`)
+  console.log(`outputFileName=${outputFileName}`)
+  console.log(`key=${key}`)
+  console.log(`value=${value}`)
+
+  render.renderREADME(
+    inputFileName,
+    outputFileName,
+    [key],
+    [value]
+  )
   const nameToGreet = core.getInput("who-to-greet");
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
+
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);

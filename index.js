@@ -39,12 +39,12 @@ async function main () {
     try {
       await exec(`git commit -m "Re-build ${outputFileName}"`)
     } catch (error) {
-      console.log("Nothing to commit")
+      console.log("nothing to commit!")
     }
     try {
       await exec(`git push origin ${gitBranch}`)
     } catch (error) {
-      console.log("Nothing to commit")      
+      console.log("nothing to commit!")
     }
 
   } catch (error) {

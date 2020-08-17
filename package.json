@@ -1,0 +1,27 @@
+{
+  "name": "regenerate-readme-action",
+  "version": "1.0.0",
+  "description": "Regenerate README file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dean-shaff/regenerate-readme-action.git"
+  },
+  "author": "Dean Shaff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dean-shaff/regenerate-readme-action/issues"
+  },
+  "homepage": "https://github.com/dean-shaff/regenerate-readme-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0"
+  }
+}

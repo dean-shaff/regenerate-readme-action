@@ -1,0 +1,20 @@
+name: 'Regenerate README'
+description: 'Regenerate and commit README from template'
+inputs:
+  input-file-name:
+    description: 'Template README file'
+    required: true
+    default: 'README.template.md'
+  output-file-name:
+    description: 'Output README file'
+    required: true
+    default: 'README.md'
+  key:
+    description: "key, in template file, to replace"
+    required: True
+  val:
+    description: "value to substitute in template file"
+    required: True
+runs:
+  using: 'node12'
+  main: 'index.js'

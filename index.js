@@ -36,8 +36,16 @@ async function main () {
     await exec(`git config --global user.email ${gitEmail}`)
     await exec(`git config --global user.name ${gitName}`)
     await exec(`git add ${outputFileName}`)
-    await exec(`git commit -m "Re-build ${outputFileName}"`)
-    await exec(`git push origin ${gitBranch}`)
+    try {
+      await exec(`git commit -m "Re-build ${outputFileName}"`)
+    } catch (error) {
+      console.log("Nothing to commit")
+    }
+    try {
+      await exec(`git push origin ${gitBranch}`)
+    } catch (error) {
+      console.log("Nothing to commit")      
+    }
 
   } catch (error) {
     core.setFailed(error.message);

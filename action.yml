@@ -12,7 +12,7 @@ inputs:
   key:
     description: "key, in template file, to replace"
     required: True
-  val:
+  value:
     description: "value to substitute in template file"
     required: True
 runs:

@@ -15,6 +15,14 @@ inputs:
   value:
     description: "value to substitute in template file"
     required: True
+  git-email:
+    description: "email for git configuration"
+    required: True
+    default: ${{ secrets.GIT_EMAIL }}
+  git-name:
+    description: "name for git configuration"
+    required: True
+    default: ${{ secrets.GIT_NAME }}
 runs:
   using: 'node12'
   main: 'index.js'

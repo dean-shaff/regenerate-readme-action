@@ -13,9 +13,8 @@ jobs:
       with:
         key: help
         value: hello
-      env:
-        GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
-        GIT_NAME: ${{ secrets.GIT_NAME }}
+        git-email: ${{ secrets.GIT_EMAIL }}
+        git-name: ${{ secrets.GIT_NAME }}
     # - name: commit rendered README.md
     #   run: |
     #     git config user.email ${{ secrets.GIT_EMAIL }}

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/dean-shaff/regenerate-readme-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4",
     "@actions/github": "^4.0.0"
   },
   "devDependencies": {

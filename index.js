@@ -23,6 +23,8 @@ async function main () {
       [value]
     )
 
+    console.log(process.env.GIT_EMAIL, process.env.GIT_NAME)
+
     await exec(`git config user.email ${process.env.GIT_EMAIL}`)
     await exec(`git config user.name ${process.env.GIT_NAME}`)
     await exec(`git add ${outputFileName}`)

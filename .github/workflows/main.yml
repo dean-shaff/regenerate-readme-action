@@ -13,11 +13,17 @@ jobs:
       with:
         node-version: 12.x
     - name: Get Help Text
-      id: get_help
       run: |
-        echo ::set-output name=HELP_TEXT::$(node main.js -h)
+        help_text=$(node main.js -h)
+        help_text="${help_text//'%'/'%25'}"
+        help_text="${help_text//$'\n'/'%0A'}"
+        help_text="${help_text//$'\r'/'%0D'}"
+        echo "::set-env name=HELP_TEXT::$help_text"
+    - name: Print HELP_TEXT
+      run: |
+        echo "$HELP_TEXT"
     - name: Regenerate README.md
       uses: ./
       with:
         key: help
-        value: ${{ steps.get_help.outputs.HELP_TEXT }}
+        value: ${{ env.HELP_TEXT }}

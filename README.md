@@ -2,7 +2,6 @@
 
 ```
 node main.js -h
-
 Generate README from template
 
 Main options
@@ -11,5 +10,5 @@ Main options
   -o, --output-file-name string    
   -k, --keys string[]              
   -v, --values string[]            
-  -h, --help                       
+  -h, --help
 ```
